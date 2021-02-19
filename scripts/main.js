@@ -1,5 +1,5 @@
 import data from "./data.js";
-import {searchMovieByTitle, makeBgActive} from "./helpers.js";
+import {searchMovieByTitle, makeBgActive, makeBgActivePerGenre} from "./helpers.js";
 
 class MoviesApp {
     constructor(options) {
@@ -138,7 +138,7 @@ class MoviesApp {
             selectedGenres.forEach((item) => {
                 const matchedMovies = data.filter((movie) => {
                     return movie.genre === item.value;
-                }).forEach(makeBgActive)
+                }).forEach(makeBgActivePerGenre)
             })
 
         });
